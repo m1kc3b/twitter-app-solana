@@ -8,4 +8,6 @@ pub struct Tweet {
     pub topic: String,
     #[max_len(500)]
     pub content: String,
+    pub likes: u64,
+    pub dislikes: u64,
 }

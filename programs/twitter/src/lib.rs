@@ -10,6 +10,8 @@ use instructions::remove_comment::{RemoveComment, delete_comment};
 use instructions::add_reaction::{AddReaction, initialize_reaction};
 use instructions::remove_reaction::{RemoveReaction, delete_reaction};
 
+use state::reaction::ReactionType;
+
 declare_id!("7e957SngurXVSomdZ7Qhw3QeBB3FtZu9GEdpcMcBS5Mu");
 
 #[program]
@@ -34,12 +36,12 @@ pub mod twitter {
     }
 
     pub fn like(ctx: Context<AddReaction>) -> Result<()> {
-        initialize_reaction(ctx, state::reaction::ReactionType)?;
+        initialize_reaction(ctx, ReactionType::Like)?;
         Ok(())
     }
 
     pub fn dislike(ctx: Context<AddReaction>) -> Result<()> {
-        initialize_reaction(ctx, state::reaction::ReactionType)?;
+        initialize_reaction(ctx, ReactionType::Dislike)?;
         Ok(())
     }
 
