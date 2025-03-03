@@ -1,10 +1,10 @@
 use anchor_lang::prelude::*;
 
-#[derive(Accounts)]
-pub struct RemoveComment<'info> {
-    
+pub fn delete_comment(ctx: Context<RemoveComment>) -> Result<()> {
+    Ok(())
 }
 
-impl<'info> RemoveComment<'info> {
+#[derive(Accounts)]
+pub struct RemoveComment<'info> {
     
 }

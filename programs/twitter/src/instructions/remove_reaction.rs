@@ -1,10 +1,11 @@
 use anchor_lang::prelude::*;
 
-#[derive(Accounts)]
-pub struct RemoveReaction<'info> {
-    
+pub fn delete_reaction(ctx: Context<RemoveReaction>) -> Result<()> {
+
+  Ok(())
 }
 
-impl<'info> RemoveReaction<'info> {
+#[derive(Accounts)]
+pub struct RemoveReaction<'info> {
     
 }

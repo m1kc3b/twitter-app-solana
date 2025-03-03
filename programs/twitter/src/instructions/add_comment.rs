@@ -1,10 +1,11 @@
 use anchor_lang::prelude::*;
 
-#[derive(Accounts)]
-pub struct AddComment<'info> {
+pub fn initialize_comment(ctx: Context<AddComment>, content: String) -> Result<()> {
     
+    Ok(())
 }
 
-impl<'info> AddComment<'info> {
+#[derive(Accounts)]
+pub struct AddComment<'info> {
     
 }
