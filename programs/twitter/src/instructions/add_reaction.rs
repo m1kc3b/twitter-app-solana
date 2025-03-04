@@ -14,12 +14,12 @@ pub fn initialize_reaction(ctx: Context<AddReaction>, reaction_type: ReactionTyp
     match reaction_type {
         ReactionType::Like => {
             tweet_reaction.reaction = reaction_type;
-            tweet.likes = tweet.likes.checked_add(1).unwrap();
+            tweet.likes = tweet.likes.checked_add(1).unwrap(); // TODO: impl error when likes = MAX
             Ok(())
         },
         ReactionType::Dislike => {
             tweet_reaction.reaction = reaction_type;
-            tweet.dislikes = tweet.dislikes.checked_add(1).unwrap();
+            tweet.dislikes = tweet.dislikes.checked_add(1).unwrap(); // TODO: impl error when dislikes = MAX
             Ok(())
         },
     }
