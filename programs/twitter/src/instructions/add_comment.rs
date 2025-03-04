@@ -39,7 +39,7 @@ pub struct AddComment<'info> {
             TWEET_REACTION_SEED.as_bytes(), 
             tweet.key().as_ref(), 
             user.key().as_ref(),
-            hash(content.as_bytes()).to_bytes().as_ref(),
+            {hash(content.as_bytes()).to_bytes().as_ref()},
         ],
         bump,
     )]
