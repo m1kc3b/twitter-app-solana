@@ -1,6 +1,7 @@
 use anchor_lang::prelude::*;
 
-use crate::state::reaction::ReactionType;
+use crate::state::reaction::{ReactionType, Reaction, TWEET_REACTION_SEED};
+use crate::state::tweet::{Tweet, TWEET_SEED};
 
 pub fn delete_reaction(ctx: Context<RemoveReaction>) -> Result<()> {
   let tweet = &mut ctx.accounts.tweet;

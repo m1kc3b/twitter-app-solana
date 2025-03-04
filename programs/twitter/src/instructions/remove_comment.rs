@@ -1,6 +1,11 @@
 use anchor_lang::prelude::*;
+use anchor_lang::solana_program::hash::hash;
 
-pub fn delete_comment(ctx: Context<RemoveComment>) -> Result<()> {
+use crate::state::reaction::TWEET_REACTION_SEED;
+use crate::state::tweet::{Tweet, TWEET_SEED};
+use crate::state::comment::Comment;
+
+pub fn delete_comment(_ctx: Context<RemoveComment>) -> Result<()> {
     msg!("Comment deleted!");
     Ok(())
 }
@@ -17,7 +22,7 @@ pub struct RemoveComment<'info> {
             TWEET_REACTION_SEED.as_bytes(), 
             tweet.key().as_ref(), 
             user.key().as_ref(),
-            hash(content.as_bytes()).to_bytes().as_ref(),
+            hash(tweet_comment.content[..tweet_comment.content_length as usize].as_ref()).to_bytes().as_ref(),
         ],
         bump = tweet_comment.bump,
     )]

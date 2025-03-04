@@ -10,12 +10,12 @@ pub fn initialize_tweet(ctx: Context<CreateTweet>, topic: String, content: Strin
 
     let tweet = &mut ctx.accounts.tweet;
 
-    let mut topic_bytes = [u8; TOPIC_LENGTH];
-    topic_bytes[..topic.len()].copy_from_slice(topic);
+    let mut topic_bytes = [0u8; TOPIC_LENGTH];
+    topic_bytes[..topic.len()].copy_from_slice(topic.as_bytes());
     tweet.topic = topic_bytes;
 
-    let mut content_bytes = [u8; CONTENT_LENGTH];
-    content_bytes[..content.len()].copy_from_slice(content);
+    let mut content_bytes = [0u8; CONTENT_LENGTH];
+    content_bytes[..content.len()].copy_from_slice(content.as_bytes());
     tweet.content = content_bytes;
     
     tweet.author = *ctx.accounts.user.key;

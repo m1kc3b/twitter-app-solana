@@ -1,5 +1,11 @@
 use anchor_lang::prelude::*;
-use instructions::*;
+use instructions::{
+    add_comment::*,
+    add_reaction::*,
+    create_tweet::*,
+    remove_comment::*,
+    remove_reaction::*,
+};
 use state::reaction::ReactionType;
 
 pub mod errors;
