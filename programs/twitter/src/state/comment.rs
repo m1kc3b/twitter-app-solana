@@ -1,10 +1,14 @@
 use anchor_lang::prelude::*;
 
+pub const COMMENT_LENGTH: usize = 500;
+
 #[account]
-#[derive(InitSpace)]
 pub struct Comment {
     pub tweet: Pubkey,
     pub author: Pubkey,
-    #[max_len(500)]
-    pub content: String,
+    pub content: [u8; COMMENT_LENGTH],
+}
+
+impl Comment {
+    pub const LEN: usize = 32 + 32 + COMMENT_LENGTH;
 }

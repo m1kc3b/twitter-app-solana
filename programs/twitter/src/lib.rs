@@ -16,7 +16,6 @@ declare_id!("7e957SngurXVSomdZ7Qhw3QeBB3FtZu9GEdpcMcBS5Mu");
 
 #[program]
 pub mod twitter {
-    use crate::instructions::add_reaction;
 
     use super::*;
 
