@@ -7,4 +7,6 @@ pub enum TwitterError {
     TopicTooLong,
     #[msg("The content's lenght is too long!")]
     ContentTooLong,
+    #[msg("The comment's lenght is too long!")]
+    CommentTooLong
 }

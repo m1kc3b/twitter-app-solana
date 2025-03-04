@@ -1,16 +1,10 @@
+use anchor_lang::prelude::*;
+use instructions::*;
+use state::reaction::ReactionType;
+
 pub mod errors;
 pub mod instructions;
 pub mod state;
-
-use anchor_lang::prelude::*;
-
-use instructions::create_tweet::{CreateTweet, initialize_tweet};
-use instructions::add_comment::{AddComment, initialize_comment};
-use instructions::remove_comment::{RemoveComment, delete_comment};
-use instructions::add_reaction::{AddReaction, initialize_reaction};
-use instructions::remove_reaction::{RemoveReaction, delete_reaction};
-
-use state::reaction::ReactionType;
 
 declare_id!("7e957SngurXVSomdZ7Qhw3QeBB3FtZu9GEdpcMcBS5Mu");
 
